@@ -1,4 +1,142 @@
-h1 {
-  color: white;
-  background-color: black;
+:root {
+  --color-main: #3148ac;
+  --shadow: 2px 2px 15px -5px rgba(75, 75, 75, 0.2);
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  color: #242d58;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  grid-template-columns: minmax(100%, 500px);
+  grid-template-rows: 1fr auto;
+  background-color: var(--color-main);
+}
+
+#app {
+  margin: 20px;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(255, 255, 255, 0.8);
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+
+#location-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  margin: 15px;
+}
+
+.input-wrapper {
+  background-color: #fff;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 40px 250px 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.input-wrapper:focus-within {
+  outline: 1px solid var(--color-main);
+}
+
+.input-wrapper > input {
+  appearance: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.input-wrapper > img.location-icon,
+#location-form > button {
+  align-self: center;
+  justify-self: center;
+}
+
+.input-wrapper > img.location-icon,
+img.search-icon {
+  width: 20px;
+}
+
+#location-form > button {
+  appearance: none;
+  outline: none;
+  border: none;
+  background-color: var(--color-main);
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+#location-form > button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+#location-form > button:active {
+  filter: brightness(1.4);
+}
+
+.location {
+  font-size: 2rem;
+  margin: 20px;
+}
+
+img.weather-icon {
+  width: 250px;
+  filter: drop-shadow(3px 3px 5px rgb(0 0 0 / 0.2));
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.weather-desc {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+
+.copyright {
+  color: #b3b3b3;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+.attribution {
+  position: absolute;
+  background-color: #fff;
+  color: #4d4d4d;
+  font-size: 12px;
+  padding: 15px;
+  bottom: 25px;
+  left: 25px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-right: 25px;
+}
+
+.copyright:focus + .attribution {
+  opacity: 1;
+}
+
+.attribution a {
+  color: #747474;
 }

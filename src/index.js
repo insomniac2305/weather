@@ -51,7 +51,8 @@ locationForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchLoc = locationInput.value;
   if (searchLoc !== "") {
-    showWeatherData(locationInput.value);
+    showWeatherData(searchLoc);
+    locationInput.value = "";
   }
 });
 
@@ -68,3 +69,4 @@ async function fetchIPLocation() {
 }
 
 fetchIPLocation().then((response) => showWeatherData(response));
+locationInput.focus();
