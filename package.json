@@ -10,7 +10,7 @@
   "scripts": {
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open --mode development"
   },
   "browserslist": [
     "defaults and supports es6-module"
