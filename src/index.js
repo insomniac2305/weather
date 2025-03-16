@@ -59,7 +59,7 @@ locationForm.addEventListener("submit", (e) => {
 async function fetchIPLocation() {
   let location;
   try {
-    const response = await fetch("https://json.geoiplookup.io/", { mode: "cors" });
+    const response = await fetch("https://ipapi.co/json/", { mode: "cors" });
     const responseJson = await response.json();
     location = `${responseJson.city}, ${responseJson.country_code}`;
   } catch (error) {
